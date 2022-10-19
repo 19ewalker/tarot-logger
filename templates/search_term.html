@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<html>
+    <head>
+        <link rel="stylesheet" href="{{url_for('static', filename='search.css')}}">
+        <script type="text/javascript" src="{{ url_for('static', filename = 'search.js') }}"></script>
+        <script>
+            $(document).ready(function() {
+                let term = {{term|tojson}}
+                let lookup = display_results(term)
+            })
+
+        </script>
+    </head>
+    <body>
+        <div class = "container">
+            <div id = "jumbotron">
+                <h2>Showing Results for {{term}}</h2>
+            </div>
+            <div class = "row">
+                <div class = "col-md-4 type-header">
+                    <b>Type of Spread</b>
+                </div>
+                <div class = "col-md-4 date-header">
+                    <b>Date Completed</b>
+                </div>
+                <div class = "col-md-4 cards-header">
+                    <b>Cards Drawn</b>
+                </div>
+            </div>
+            <div id = "results">
+            </div>
+        </div>
+    </body>
+</html>
+
+{% endblock %}

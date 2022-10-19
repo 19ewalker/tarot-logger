@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{{url_for('static', filename='add.css')}}">
+        <script type="text/javascript" src="{{ url_for('static', filename = 'add.js') }}"></script>
+        <script>
+        </script>
+    </head>
+    <body>
+        <div id = "container">
+            <div id = "see-new-spread">
+            </div>
+            <div id = "jumbotron">
+                <h1>Add Tarot Spread</h1>
+            </div>
+            <div id = "details">
+                <form id = "newSpread">
+                  <label for="spreadType">Spread Type: </label>
+                  <input type="text" id="spreadType" name="spreadType">
+                  <div class ="warning_div" id="spreadType_warning_div"></div><br>
+
+                  <label for="numCards">Number of Cards: </label>
+                  <input type="text" id="numCards" name="numCards">
+                  <div class ="warning_div" id="num_cards_warning_div"></div><br>
+
+                  <label for="date">Date: </label>
+                  <input type="text" id="date" name="date">
+                  <div class ="warning_div" id="date_warning_div"></div><br>
+
+                  <label for="deck">Deck Used: </label>
+                  <input type="text" id="deck" name="deck">
+                  <div class ="warning_div" id="deck_warning_div"></div><br>
+
+                  <label for="reader"> Reader: </label>
+                  <input type="reader" id="reader" name="reader">
+                  <div class ="warning_div" id="reader_warning_div"></div><br>
+
+                  <label for="question">Question Asked: </label>
+                  <input type="question" id="question" name="question">
+                  <div class ="warning_div" id="question_warning_div"></div><br>
+
+                  <label for="cards">Cards Drawn: </label>
+                  <input type="text" id="cards" name="cards">
+                  <div class ="warning_div" id="cards_warning_div"></div><br>
+
+                  <label for="notes">Notes: </label>
+                  <input type="text" id="notes" name="notes">
+
+                  <input type="submit" class="submit-button" value="Submit">
+
+                 </form>
+            </div>
+        </div>
+    </body>
+</html>
+{% endblock %}
