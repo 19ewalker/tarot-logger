@@ -5,7 +5,26 @@
     <head>
         <link rel="stylesheet" href="{{url_for('static', filename='add.css')}}">
         <script type="text/javascript" src="{{ url_for('static', filename = 'add.js') }}"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
         <script>
+            $( function() {
+                var cardNames = [
+                      "The Fool", "The Magician", "The High Priestess", "The Empress", "The Emperor",
+                      "The Hierophant", "The Lovers", "The Chariot", "Strenth", "The Hermit",
+                      "Wheel of Fortune", "Justice", "The Hanged Man", "Death", "Temperance",
+                      "The Devil", "The Tower", "The Star", "The Moon", "The Sun", "Judgement", "The World"
+                    ];
+                var spreadNames = [
+                      "Daily", "Past, Present, Future", "Celtic Cross", "Situation, Obstacle, Advice", "Mind, Body, Spirit",
+                      "Six Month Spread", "Year Ahead Spread", "Month Ahead Spread", "Week Ahead Spread", "Five Card Cross"
+                    ];
+                $( "#cards" ).autocomplete({
+                  source: cardNames
+                });
+                $( "#spreadType" ).autocomplete({
+                  source: spreadNames
+                });
+            });
         </script>
     </head>
     <body>

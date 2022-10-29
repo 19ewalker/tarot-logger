@@ -70,7 +70,6 @@ def edit_id(id=None):
 @app.route('/find_spreads', methods=['GET', 'POST'])
 def find_spreads():
     global spreads
-
     json_data = request.get_json()
     lookup = json_data
     print(lookup)
@@ -81,16 +80,16 @@ def find_spreads():
         for y in x["cards"]:
             if lookup.lower() in y.lower():
                 inCards= True
-        if lookup.lower() in x["spreadType"].lower():
-            results.append(x)
-        elif lookup.lower() in x["date"].lower():
-            results.append(x)
-        elif inCards == True:
+        if inCards == True:
             keepSearching = True
             for y in x["cards"]:
                 if lookup.lower() in y.lower() and keepSearching ==True:
                     results.append(x)
                     keepSearching = False
+        elif lookup.lower() in x["spreadType"].lower():
+            results.append(x)
+        elif lookup.lower() in x["date"].lower():
+            results.append(x)
     #send back the WHOLE array of data, so the client can redisplay it
     print(results)
     found = len(results)
