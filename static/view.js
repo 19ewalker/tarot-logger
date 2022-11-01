@@ -8,30 +8,20 @@ function display_info(info){
 function show_info(results){
     console.log(results)
 
-    $("#jumbotron").append("<div id='spreadType'><h2>"+results["spreadType"]+" Spread, " + results["date"]+ "</h2></div>")
-    $("#jumbotron").append("<a href='/edit/"+results["id"]+"' id='edit' class='btn btn-info' role='button'>Edit</a>")
+    $("#jumbotron").append("<div class = 'row' id='heading'><div id='spreadType'><h2>"+results["spreadType"]+" Spread, " + results["date"]+ "</h2></div>")
+    $("#heading").append("<a href='/edit/"+results["id"]+"' id='edit' class='btn btn-info btn-lg' role='button'>Edit</a></div>")
 
     let row = $("<div class = 'row'>")
     $("#info").append(row)
 
-    let col_info = $("<div class = 'col-md-6'>")
+    let col_info = $("<div class = 'col-md-12'>")
     $(row).append(col_info)
 
-    let spreadType = $("<div class = 'spreadType'><b>Spread Type: </b>")
-    $(spreadType).append("<a href='/search/"+results["spreadType"] + "'>"+ results["spreadType"] +"</a>")
-    $(col_info).append(spreadType)
+    let col_question= $("<div class = 'question'><h3>Question Asked: "+ results["question"]+ "</h3>")
+    $(col_info).append(col_question)
 
-    let date = $("<div class = 'date'><b>Date: </b>")
-    $(date).append(results["date"])
-    $(col_info).append(date)
-
-    let deck= $("<div class = 'deck'><b>Deck: </b>")
-    $(deck).append(results["deck"])
-    $(col_info).append(deck)
-
-    let reader = $("<div class = 'reader'><b>Reader: </b>")
-    $(reader).append(results["reader"])
-    $(col_info).append(reader)
+    let col_about= $("<div class = 'about'><h3>Spread Info: </h3>")
+    $(col_info).append(col_about)
 
     let cards = $("<div class = 'cards'> <b>Cards Drawn: </b>")
     $.each(results["cards"], function(i, card){
@@ -39,13 +29,18 @@ function show_info(results){
     })
     $(col_info).append(cards)
 
-    let col_notes = $("<div class = 'col-md-6'><b>Question Asked: </b>")
-    $(col_notes).append(results["question"])
-    $(row).append(col_notes)
+    let reader = $("<div class = 'reader'><b>Reader: </b>")
+    $(reader).append(results["reader"])
+    $(col_info).append(reader)
 
-    let notes = $("<div class = 'deck'><b>Spread Notes: </b>")
+    let deck= $("<div class = 'deck'><b>Deck: </b>")
+    $(deck).append(results["deck"])
+    $(col_info).append(deck)
+
+
+    let notes = $("<div class = 'notes'><b>Spread Notes: </b>")
     $(notes).append(results["notes"])
-    $(col_notes).append(notes)
+    $(col_info).append(notes)
 
 }
 function find_spread(info){

@@ -5,11 +5,20 @@
     <head>
         <link rel="stylesheet" href="{{url_for('static', filename='edit.css')}}">
         <script type="text/javascript" src="{{ url_for('static', filename = 'edit.js') }}"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
         <script>
+            $( function() {
+                var spreadNames = [
+                  "Daily", "Past, Present, Future", "Celtic Cross", "Situation, Obstacle, Advice", "Mind, Body, Spirit",
+                  "Six Month Spread", "Year Ahead Spread", "Month Ahead Spread", "Week Ahead Spread", "Five Card Cross"
+                  ];
+                $( "#spreadType" ).autocomplete({
+                    source: spreadNames
+                    });
+            });
             $(document).ready(function() {
                 let id = {{id|tojson}}
                 let info = display_info(id)
-
                 $("#discard").click(function(){
                     event.preventDefault();
                     if (confirm('Are you sure ?')) {
@@ -34,29 +43,29 @@
                     <input type="text" id="spreadType" name="spreadType">
                     <div class ="warning_div" id="spreadType_warning_div"></div><br>
 
-                    <label for="numCards">Number of Cards: </label>
-                    <input type="text" id="numCards" name="numCards">
-                    <div class ="warning_div" id="num_cards_warning_div"></div><br>
-
                     <label for="date">Date: </label>
                     <input type="text" id="date" name="date">
                     <div class ="warning_div" id="date_warning_div"></div><br>
-
-                    <label for="deck">Deck Used: </label>
-                    <input type="text" id="deck" name="deck">
-                    <div class ="warning_div" id="deck_warning_div"></div><br>
-
-                    <label for="reader"> Reader: </label>
-                    <input type="reader" id="reader" name="reader">
-                    <div class ="warning_div" id="reader_warning_div"></div><br>
 
                     <label for="question">Question Asked: </label>
                     <input type="question" id="question" name="question">
                     <div class ="warning_div" id="question_warning_div"></div><br>
 
+                    <label for="numCards">Number of Cards: </label>
+                    <input type="text" id="numCards" name="numCards">
+                    <div class ="warning_div" id="num_cards_warning_div"></div><br>
+
                     <label for="cards">Cards Drawn: </label>
                     <input type="text" id="cards" name="cards">
                     <div class ="warning_div" id="cards_warning_div"></div><br>
+
+                    <label for="reader"> Reader: </label>
+                    <input type="reader" id="reader" name="reader">
+                    <div class ="warning_div" id="reader_warning_div"></div><br>
+
+                    <label for="deck">Deck Used: </label>
+                    <input type="text" id="deck" name="deck">
+                    <div class ="warning_div" id="deck_warning_div"></div><br>
 
                     <label for="notes">Notes: </label>
                     <input type="text" id="notes" name="notes">

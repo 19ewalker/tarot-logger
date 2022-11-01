@@ -17,12 +17,12 @@ function display_info(info){
 }
 function show_info(results){
     $("#spreadType").val(results["spreadType"])
-    $("#numCards").val(results["numCards"])
     $("#date").val(results["date"])
-    $("#deck").val(results["deck"])
-    $("#reader").val(results["reader"])
     $("#question").val(results["question"])
+    $("#numCards").val(results["numCards"])
     $("#cards").val(results["cards"])
+    $("#reader").val(results["reader"])
+    $("#deck").val(results["deck"])
     $("#notes").val(results["notes"])
 }
 function find_info(info){

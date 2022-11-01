@@ -40,7 +40,28 @@ spreads = [
         "notes": "This reading made me think of this other thing..."
     }
 ]
-
+cardNames = [
+    {
+		"id": "1",
+        "cardName": "The Fool",
+        "cardImage": "https://www.tarotcardmeanings.net/images/tarotcards/tarot-fool.jpg"
+	},
+    {
+		"id": "2",
+        "cardName": "The Magician",
+        "cardImage": "https://www.tarotcardmeanings.net/images/tarotcards/tarot-magician.jpg"
+	},
+    {
+		"id": "3",
+        "cardName": "The High Priestess",
+        "cardImage": "https://www.tarotcardmeanings.net/images/tarotcards/tarot-highpriestess.jpg"
+	},
+    {
+		"id": "4",
+        "cardName": "The Empress",
+        "cardImage": "https://www.tarotcardmeanings.net/images/tarotcards/tarot-empress.jpg"
+	}
+]
 # ROUTES
 @app.route('/')
 def hello_world():
@@ -87,6 +108,8 @@ def find_spreads():
                     results.append(x)
                     keepSearching = False
         elif lookup.lower() in x["spreadType"].lower():
+            results.append(x)
+        elif lookup.lower() in x["question"].lower():
             results.append(x)
         elif lookup.lower() in x["date"].lower():
             results.append(x)

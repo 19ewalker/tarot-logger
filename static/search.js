@@ -9,23 +9,25 @@ function show_results(results){
     if(results.length > 0){
         console.log(results)
         $.each(results, function(i, spreadVal){
-            let row = $("<div class = 'row'>")
+            let row = $("<div class = 'row search-spreads'>")
             $("#results").append(row)
 
-            let col_type = $("<div class = 'col-md-4'>")
+            let col_question = $("<div class = 'col-md-6'>")
+            $(col_question).append(spreadVal["question"])
+            $(row).append(col_question)
+
+            let col_type = $("<div class = 'col-md-2'>")
             $(col_type).append(spreadVal["spreadType"])
             $(row).append(col_type)
 
-            let col_date = $("<div class = 'col-md-4'>")
+            let col_date = $("<div class = 'col-md-2'>")
             $(col_date).append(spreadVal["date"])
             $(row).append(col_date)
 
-            let col_cards = $("<div class = 'col-md-4'>")
-            $.each(spreadVal["cards"], function(i, card){
-                $(col_cards).append(card+", ")
+            let col_button = $("<div class = 'col-md-2'>")
+            $(col_button).append("<a href='/view/"+spreadVal["id"]+"' id='view' class='btn btn-info' role='button'>View</a>")
+            $(row).append(col_button)
             })
-            $(row).append(col_cards)
-        })
     }
     else{
         console.log("No results found")
