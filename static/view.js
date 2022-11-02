@@ -9,7 +9,7 @@ function show_info(results){
     console.log(results)
 
     $("#jumbotron").append("<div class = 'row' id='heading'><div id='spreadType'><h2>"+results["spreadType"]+" Spread, " + results["date"]+ "</h2></div>")
-    $("#heading").append("<a href='/edit/"+results["id"]+"' id='edit' class='btn btn-info btn-lg' role='button'>Edit</a></div>")
+    $("#heading").append("<a href='/edit/"+results["id"]+"' id='edit' class='btn btn-lg' role='button'>Edit</a></div>")
 
     let row = $("<div class = 'row'>")
     $("#info").append(row)
@@ -20,7 +20,7 @@ function show_info(results){
     let col_question= $("<div class = 'question'><h3>Question Asked: "+ results["question"]+ "</h3>")
     $(col_info).append(col_question)
 
-    let col_about= $("<div class = 'about'><h3>Spread Info: </h3>")
+    let col_about= $("<div class = 'about'><h4>Spread Info: </h4>")
     $(col_info).append(col_about)
 
     let cards = $("<div class = 'cards'> <b>Cards Drawn: </b>")

@@ -1,14 +1,18 @@
 body{
     background-color: #E3E8E9;
 }
-#info{
+#spreadInfo{
     margin: 20px;
     padding: 20px;
     background-color: #FFFFFF;
     border-radius: 25px;
 }
-.btn-lg {
+.btn{
     margin-left: auto;
     background-color: #9DA993;
     color: #ffffff;
+}
+.row{
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
