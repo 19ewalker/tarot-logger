@@ -1,0 +1,28 @@
+body{
+    background-color: #B9C8BC;
+}
+#info{
+    margin: 20px;
+    padding: 20px;
+    background-color: #f2f3f4;
+    border-radius: 25px;
+}
+label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 150px;
+    text-align: left;
+    color: #3a3a3a;
+}
+input {
+  display: inline-block;
+}
+#details{
+    margin: 20px;
+}
+.submit-button {
+    background: #3A6A59;
+    color: #ffffff;
+    margin-left: auto;
+}

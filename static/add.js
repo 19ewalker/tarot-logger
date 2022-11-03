@@ -15,8 +15,14 @@ function submitSpread(){
     let notes = $.trim( $("#notes").val())
 
     let no_error = true
+    $("#spreadType_warning_div").empty();
+    $("#num_cards_warning_div").empty();
+    $("#date_warning_div").empty();
+    $("#deck_warning_div").empty();
+    $("#reader_warning_div").empty();
+    $("#cards_warning_div").empty();
 
-    if(spreadType == ""){
+    if(spreadType == "" && no_error){
         $("#spreadType_warning_div").append('<div class = "warning">Spread type cannot be empty</div>')
         $("#title").val("")
         $("#title").focus()

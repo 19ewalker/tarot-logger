@@ -1,14 +1,14 @@
 body{
-    background-color: #E3E8E9;
+    background-color: #B9C8BC;
 }
 #info{
     margin: 20px;
     padding: 20px;
-    background-color: #FFFFFF;
+    background-color: #f2f3f4;
     border-radius: 25px;
 }
 .btn-lg {
     margin-left: auto;
-    background-color: #9DA993;
-    color: #ffffff;
+    background-color: #3A6A59;
+    color: #f2f3f4;
 }
