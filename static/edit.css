@@ -1,3 +1,12 @@
+#jumbotron{
+  display: flex;
+  align-items: center; /* Vertical align the elements to the center */
+}
+#jumbotron button{
+    margin-left: 20px;
+}
+h1 {
+}
 body{
     background-color: #B9C8BC;
 }
@@ -21,11 +30,14 @@ input {
 #details{
     margin: 20px;
 }
-.submit-button {
+#submit-button {
     background: #3A6A59;
     color: #ffffff;
     margin-left: auto;
 }
-#submit-grp{
-    margin-top: 40px;
+#button-grp{
+    margin: 30px;
+}
+#discard{
+    margin-left: 20px;
 }

@@ -1,13 +1,6 @@
 body{
     background-color: #B9C8BC;
 }
-#jumbotron{
-  display: flex;
-  align-items: center; /* Vertical align the elements to the center */
-}
-#jumbotron button{
-    margin-left: 20px;
-}
 #spreadInfo{
     margin: 20px;
     padding: 20px;
@@ -20,6 +13,6 @@ body{
     color: #ffffff;
 }
 .row{
-    margin-top: 15px;
-    margin-bottom: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }

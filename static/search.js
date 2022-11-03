@@ -12,11 +12,11 @@ function show_results(results){
             let row = $("<div class = 'row search-spreads'>")
             $("#results").append(row)
 
-            let col_question = $("<div class = 'col-md-6'>")
+            let col_question = $("<div class = 'col-md-5'>")
             $(col_question).append(spreadVal["question"])
             $(row).append(col_question)
 
-            let col_type = $("<div class = 'col-md-2'>")
+            let col_type = $("<div class = 'col-md-3'>")
             $(col_type).append(spreadVal["spreadType"])
             $(row).append(col_type)
 
@@ -25,7 +25,7 @@ function show_results(results){
             $(row).append(col_date)
 
             let col_button = $("<div class = 'col-md-2'>")
-            $(col_button).append("<a href='/view/"+spreadVal["id"]+"' id='view' class='btn btn-info' role='button'>View</a>")
+            $(col_button).append("<a href='/view/"+spreadVal["id"]+"' id='view' class='btn' role='button'>View</a>")
             $(row).append(col_button)
             })
     }

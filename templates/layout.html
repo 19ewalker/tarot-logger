@@ -29,7 +29,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 
-  <link rel="stylesheet" href="{{url_for('static', filename='../static/main.css')}}">
+  <!--<link rel="stylesheet" href="{{url_for('static', filename='main.css')}}"> -->
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
@@ -37,12 +37,13 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
 
     <title>Tarot Spread Logger</title>
   </head>
   <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-custom">
+<nav class="navbar navbar-expand-lg navbar-light navbar-custom">
   <div class="container">
     <a class="navbar-brand" href="/">Tarot Spread Logger</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,13 +51,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <form id="target">
-            <input type="text" placeholder="Search Spreads" id="enter_spread">
-            <input type="submit" value="Go">
-        </form>
+
       </div>
       <div class="topnav-right">
-          <button type = "button" id="add" class ="btn btn-default">Add</button>
+          <form id="target">
+              <input type="text" placeholder="Search Spreads" id="enter_book">
+              <input type="button" class = "btn search-btn" value="Go">
+          </form>
       </div>
     </div>
   </div>

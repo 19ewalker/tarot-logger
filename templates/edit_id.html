@@ -33,11 +33,11 @@
     <body>
         <div id = "container">
             <div id = "jumbotron">
-                <h1>Edit Tarot Spread Log</h1>
+                <h1>Edit Tarot Spread Log</h1> <button type='button' id='delete' class='btn btn-danger btn-lg'>Delete</button>
             </div>
             <div id = "see-created">
             </div>
-            <div id = "details">
+            <div id = "info">
                 <form id = "editSpread">
                     <label for="spreadType">Spread Type: </label>
                     <input type="text" id="spreadType" name="spreadType">
@@ -48,7 +48,8 @@
                     <div class ="warning_div" id="date_warning_div"></div><br>
 
                     <label for="question">Question Asked: </label>
-                    <input type="question" id="question" name="question">
+                    <textarea rows="2" cols="40" id="question" name="question">
+                    </textarea>
                     <div class ="warning_div" id="question_warning_div"></div><br>
 
                     <label for="numCards">Number of Cards: </label>
@@ -68,11 +69,12 @@
                     <div class ="warning_div" id="deck_warning_div"></div><br>
 
                     <label for="notes">Notes: </label>
-                    <input type="text" id="notes" name="notes">
-
-                  <input type="submit" id = "submit-button" value="Submit">
-                  <button type="button" id="discard" class="btn btn-danger">Discard Changes</button>
-                  <button type="button" id="delete" class="btn btn-danger">Delete</button>
+                    <textarea rows="4" cols="40" id="notes" name="notes">
+                    </textarea>
+                  <div id = "button-grp">
+                      <input type="submit" id = "submit-button" class = "btn" value="Submit">
+                      <button type="button" id="discard" class="btn btn-danger">Discard Changes</button>
+                  </div>
 
                  </form>
             </div>

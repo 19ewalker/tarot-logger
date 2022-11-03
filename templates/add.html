@@ -8,12 +8,6 @@
         <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
         <script>
             $( function() {
-                var cardNames = [
-                      "The Fool", "The Magician", "The High Priestess", "The Empress", "The Emperor",
-                      "The Hierophant", "The Lovers", "The Chariot", "Strenth", "The Hermit",
-                      "Wheel of Fortune", "Justice", "The Hanged Man", "Death", "Temperance",
-                      "The Devil", "The Tower", "The Star", "The Moon", "The Sun", "Judgement", "The World"
-                    ];
                 var spreadNames = [
                       "Daily", "Past, Present, Future", "Celtic Cross", "Situation, Obstacle, Advice", "Mind, Body, Spirit",
                       "Six Month Spread", "Year Ahead Spread", "Month Ahead Spread", "Week Ahead Spread", "Five Card Cross"
@@ -64,8 +58,9 @@
 
                       <label for="notes">Notes: </label>
                       <input type="text" id="notes" name="notes">
-                      <input type="submit" class="btn submit-button" value="Submit">
-
+                      <div id = "submit-grp">
+                           <input type="submit" class="btn submit-button" value="Submit">
+                      </div>
                      </form>
                 </div>
             </div>
