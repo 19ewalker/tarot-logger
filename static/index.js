@@ -24,7 +24,7 @@ function show_results(results){
             $(row).append(col_date)
 
             let col_button = $("<div class = 'col-md-2'>")
-            $(col_button).append("<a href='/view/"+spreadVal["id"]+"' id='view' class='btn' role='button'>View</a>")
+            $(col_button).append("<a href='/view/"+spreadVal["id"]+"' id='view' class='btn btn-view' role='button'>View</a>")
             $(row).append(col_button)
             })
     }
