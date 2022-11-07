@@ -17,6 +17,12 @@ body{
     background-color: #f2f3f4;
     border-radius: 25px;
 }
+.btn-search{
+    margin-left: auto;
+    background-color: #3A6A59;
+    color: #ffffff;
+}
+
 label{
     display: inline-block;
     float: left;

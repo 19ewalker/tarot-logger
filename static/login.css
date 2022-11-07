@@ -1,0 +1,10 @@
+body{
+    background-color: #B9C8BC;
+    font-family: 'Raleway', serif;
+}
+#jumbotron{
+    margin: 20px;
+    padding: 20px;
+    background-color: #f2f3f4;
+    border-radius: 25px;
+}

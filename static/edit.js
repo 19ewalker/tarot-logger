@@ -137,8 +137,11 @@ function deleteSpread(){
     console.log(deleteID)
     delete_spread(deleteID)
 }
-function show_options(current_id){
-    location.replace("/view/" + current_id);
+function show_options(id){
+    location.replace("/view/" + id);
+}
+function show_home(){
+    location.replace("/");
 }
 function update_spread(edit_spread){
     $.ajax({
@@ -148,9 +151,9 @@ function update_spread(edit_spread){
         contentType: "application/json; charset=utf-8",
         data : JSON.stringify(edit_spread),
         success: function(result){
-            let all_data = result["current_id"]
-            current_id = all_data
-            show_options(current_id)
+            let all_data = result["id"]
+            id = all_data
+            show_options(id)
         },
         error: function(request, status, error){
             console.log("Error");
@@ -169,7 +172,7 @@ function delete_spread(deleteID){
         contentType: "application/json; charset=utf-8",
         data : JSON.stringify(deleteID),
         success: function(result){
-            show_options()
+            show_home()
         },
         error: function(request, status, error){
             console.log("Error");

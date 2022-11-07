@@ -1,7 +1,13 @@
 from flask import Flask
 from flask import render_template
 from flask import Response, request, jsonify
+from flask import redirect, session
+from flask_session import Session
+
 app = Flask(__name__)
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
+Session(app)
 
 
 current_id = 3
@@ -40,33 +46,28 @@ spreads = [
         "notes": "This reading made me think of this other thing..."
     }
 ]
-cardNames = [
-    {
-		"id": "1",
-        "cardName": "The Fool",
-        "cardImage": "https://www.tarotcardmeanings.net/images/tarotcards/tarot-fool.jpg"
-	},
-    {
-		"id": "2",
-        "cardName": "The Magician",
-        "cardImage": "https://www.tarotcardmeanings.net/images/tarotcards/tarot-magician.jpg"
-	},
-    {
-		"id": "3",
-        "cardName": "The High Priestess",
-        "cardImage": "https://www.tarotcardmeanings.net/images/tarotcards/tarot-highpriestess.jpg"
-	},
-    {
-		"id": "4",
-        "cardName": "The Empress",
-        "cardImage": "https://www.tarotcardmeanings.net/images/tarotcards/tarot-empress.jpg"
-	}
-]
 # ROUTES
 @app.route('/')
-def hello_world():
-   return render_template('index.html')
+def index():
+    if not session.get("name"):
+        # if not there in the session then redirect to the login page
+        return redirect("/login")
+    return render_template('index.html')
 
+@app.route("/login", methods=["POST", "GET"])
+def login():
+    if request.method == "POST":
+        # record the user name
+        session["name"] = request.form.get("name")
+        # redirect to the main page
+        return redirect("/")
+    return render_template("login.html")
+
+@app.route("/logout")
+def logout():
+    session["name"] = None
+    return redirect("/")
+    
 @app.route('/add')
 def add():
     return render_template('add.html')
@@ -74,8 +75,6 @@ def add():
 @app.route('/search/<term>')
 def search(term=None, found=None):
     print(term)
-    # run search There
-    # return search results to template
     return render_template('search_term.html', term=term, found=found)
 
 @app.route('/view/<id>')
@@ -163,10 +162,10 @@ def save_spread():
     cards = cardString.split(", ")
     notes = json_data["notes"]
 
-    print(current_id)
+    print("Starting id" + str(current_id))
     current_id = int(current_id)
     current_id += 1
-    print(current_id)
+    print("Starting id +1" + str(current_id))
 
     new_spread_entry = {
         "spreadType": spreadType,
@@ -187,7 +186,6 @@ def save_spread():
 @app.route('/update_spread', methods=['GET', 'POST'])
 def update_spread():
     global spreads
-    global current_id
     #when stuck, print out json_data and check values within variables
     json_data = request.get_json()
     spreadType = json_data["spreadType"]
@@ -200,7 +198,7 @@ def update_spread():
     cards = cardString.split(", ")
     notes = json_data["notes"]
 
-    current_id = json_data["id"]
+    id = json_data["id"]
     edit_spread_entry = {
         "spreadType": spreadType,
         "numCards": numCards,
@@ -211,14 +209,14 @@ def update_spread():
         "cards": cards,
         "cards": cards,
         "notes": notes,
-        "id": str(current_id)
+        "id": str(id)
     }
-    spreads[int(current_id)-1] = edit_spread_entry
-    print(int(current_id)-1)
-    print(spreads[int(current_id)-1])
+    spreads[int(id)-1] = edit_spread_entry
+    print(int(id)-1)
+    print(spreads[int(id)-1])
     print(edit_spread_entry)
-    print(current_id)
-    return jsonify(current_id = current_id)
+    print(id)
+    return jsonify(id=id)
 @app.route('/delete_spread', methods=['POST'])
 def delete_spread():
     global spreads

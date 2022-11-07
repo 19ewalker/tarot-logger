@@ -76,16 +76,7 @@ function submitSpread(){
     }
 }
 function show_options(current_id){
-    $("#see-new-spread").append("<h5>New item successfully created!<h5>")
-    $("#see-new-spread").append("<h5>See it <a href='http://127.0.0.1:5000/view/"+current_id+"'>"+"here</a><h5>")
-    $("#spreadType").val("")
-    $("#date").val("")
-    $("#question").val("")
-    $("#numCards").val("")
-    $("#cards").val("")
-    $("#reader").val("")
-    $("#deck").val("")
-    $("#notes").val("")
+    location.replace("/view/" + current_id);
 }
 function save_spread(new_spread){
     $.ajax({

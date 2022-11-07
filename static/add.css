@@ -22,6 +22,11 @@ input {
 #details{
     margin: 20px;
 }
+.btn-search{
+    margin-left: auto;
+    background-color: #3A6A59;
+    color: #ffffff;
+}
 .submit-button {
     background: #3A6A59;
     color: #ffffff;

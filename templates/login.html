@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<html>
+    <head>
+        <link rel="stylesheet" href="{{url_for('static', filename='login.css')}}">
+        <script type="text/javascript" src="{{ url_for('static', filename = 'login.js') }}"></script>
+    </head>
+    <body>
+        <div class = "container">
+            <div id = "jumbotron">
+                <h1>Sign Up </h1>
+                <form action="/login" method="POST">
+                    <input placeholder="Name" autocomplete="off" type="text" name="name">
+                    <input type="submit" name="Register">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
+
+{% endblock %}
