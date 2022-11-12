@@ -1,0 +1,21 @@
+{
+  "name": "tarot-logger",
+  "version": "1.0.0",
+  "description": "allowing tarot lovers to track and search their spreads",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/19ewalker/tarot-logger.git"
+  },
+  "keywords": [
+  ],
+  "author": "19ewalker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/19ewalker/tarot-logger/issues"
+  },
+  "homepage": "https://github.com/19ewalker/tarot-logger#readme"
+}
