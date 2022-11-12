@@ -1,13 +1,8 @@
 {
-"name": "tarot-logger",
-"version": "0.0.0",
-  "requires": true,
-  "lockfileVersion": 1,
+  "name": "tarot-logger",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "jquery": {
-      "version": "3.6.0",
-      "resolved": "https://registry.npmjs.org/jquery/-/jquery-3.6.0.tgz",
-      "integrity": "sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw=="
-    }
+    "bootstrap": "^5.1.3",
   }
 }
