@@ -4,7 +4,7 @@
   "description": "allowing tarot lovers to track and search their spreads",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
