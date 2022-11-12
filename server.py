@@ -1,13 +1,8 @@
 from flask import Flask
 from flask import render_template
 from flask import Response, request, jsonify
-from flask import redirect, session
-from flask_session import Session
 
 app = Flask(__name__)
-app.config["SESSION_PERMANENT"] = False
-app.config["SESSION_TYPE"] = "filesystem"
-Session(app)
 
 
 current_id = 3
@@ -30,9 +25,9 @@ spreads = [
         "date": "5/29/2022",
         "deck": "Rider-Waite Smith",
         "reader": "Me",
-        "question": "How to cope with anxiety about starting my new job",
+        "question": "Feeling antsy about starting my new internship. Any advice?",
         "cards": ["9 of Cups"],
-        "notes": "Good fortune is coming my way soon!"
+        "notes": "This will be a fruitful experience with lots to offer me"
 	},
     {
 		"id": "3",
@@ -41,7 +36,7 @@ spreads = [
         "date": "8/1/2022",
         "deck": "Rider-Waite Smith",
         "reader": "Me",
-        "question": "How to cope with difficult emotions about the past?",
+        "question": "This is a reading question!",
         "cards": ["The Star", "6 of Cups", "The Empress"],
         "notes": "This reading made me think of this other thing..."
     }
@@ -49,25 +44,8 @@ spreads = [
 # ROUTES
 @app.route('/')
 def index():
-    if not session.get("name"):
-        # if not there in the session then redirect to the login page
-        return redirect("/login")
     return render_template('index.html')
 
-@app.route("/login", methods=["POST", "GET"])
-def login():
-    if request.method == "POST":
-        # record the user name
-        session["name"] = request.form.get("name")
-        # redirect to the main page
-        return redirect("/")
-    return render_template("login.html")
-
-@app.route("/logout")
-def logout():
-    session["name"] = None
-    return redirect("/")
-    
 @app.route('/add')
 def add():
     return render_template('add.html')
